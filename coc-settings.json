@@ -1,0 +1,5 @@
+{
+    "rust-analyzer.cargo.allFeatures": true,
+    "rust-analyzer.lens.methodReferences": true,
+    "coc.preferences.formatOnType": true
+}
