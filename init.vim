@@ -105,7 +105,7 @@ set background=dark
 let g:fzf_tags_command = 'ctags -R'
 
 " Open hotkeys
-nmap <Leader><space> :GFiles<CR>
+nmap <Leader><space> :Files<CR>
 nmap <Leader>b :Buffers<CR>
 nmap <Leader>t :BTags<CR>
 nmap <Leader>e :Lexplore<CR>
