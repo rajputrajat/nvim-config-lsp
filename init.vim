@@ -13,6 +13,7 @@ Plug 'mtdl9/vim-log-highlighting'
 Plug 'preservim/tagbar'
 Plug 'ervandew/supertab'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'antoinemadec/coc-fzf'
 Plug 'srcery-colors/srcery-vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'vim-airline/vim-airline'
@@ -104,7 +105,7 @@ set background=dark
 let g:fzf_tags_command = 'ctags -R'
 
 " Open hotkeys
-nmap <Leader><space> :Files<CR>
+nmap <Leader><space> :GFiles<CR>
 nmap <Leader>b :Buffers<CR>
 nmap <Leader>t :BTags<CR>
 nmap <Leader>e :Lexplore<CR>
