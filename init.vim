@@ -46,7 +46,7 @@ autocmd BufEnter *.py,*.rs,*.c*,*.h* :call tagbar#autoopen(0)
 autocmd BufWinLeave *.py,*.rs,*.c*,*.h* :TagbarClose
 nnoremap <Leader>x :TagbarToggle<CR>
 
-let g:python3_host_prog = 'C:/Users/rajput/AppData/Local/Programs/Python/Python37/python3.exe'
+let g:python3_host_prog = 'C:/Users/rajput/AppData/Local/Programs/Python/Python39/python3.exe'
 
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled=1
