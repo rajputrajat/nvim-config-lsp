@@ -1,8 +1,6 @@
 let mapleader = "\<Space>"
 
 call plug#begin('~/AppData/Local/nvim/plugged')
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'thaerkh/vim-indentguides'           " Visual representation of indents
 Plug 'rust-lang/rust.vim'
 Plug 'tomtom/tcomment_vim'
@@ -12,17 +10,30 @@ Plug 'mtdl9/vim-log-highlighting'
 Plug 'preservim/tagbar'
 Plug 'ervandew/supertab'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'antoinemadec/coc-fzf'
 Plug 'sainnhe/sonokai'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'p00f/nvim-ts-rainbow'
 Plug 'hoob3rt/lualine.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
 call plug#end()
 
 nnoremap <Space> <Nop>
 nnoremap <silent> <leader> :LeaderMapper "<Space>"<CR>
 vnoremap <silent> <leader> :LeaderMapper "<Space>"<CR>
+
+nnoremap <leader><space>  <cmd>Telescope find_files<cr>
+nnoremap <leader>ff       <cmd>Telescope live_grep<cr>
+nnoremap <leader>g        <cmd>Telescope grep_string<cr>
+nnoremap <leader>b        <cmd>Telescope buffers<cr>
+nnoremap <leader>fh       <cmd>Telescope help_tags<cr>
+nnoremap <leader>l        <cmd>Telescope current_buffer_fuzzy_find<cr>
+nnoremap <leader>L        <cmd>Telescope loclist<cr>
+nnoremap <leader>k        <cmd>Telescope keymaps<cr>
+nnoremap <leader>r        <cmd>Telescope registers<cr>
+nnoremap <leader>m        <cmd>Telescope marks<cr>
+nnoremap <leader>c        <cmd>Telescope commands<cr>
 
 colorscheme sonokai
 let g:sonokai_style = 'default'
@@ -44,7 +55,6 @@ nnoremap <Leader>x :TagbarToggle<CR>
 
 let g:python3_host_prog = 'C:/Users/rajput/AppData/Local/Programs/Python/Python39/python3.exe'
 
-
 let g:ale_sign_column_always = 1
 "let g:ale_linters = {'rust': ['analyzer']}
 
@@ -55,16 +65,6 @@ set foldlevel=0
 let g:rustfmt_autosave = 1
 let g:rustfmt_emit_files = 1
 let g:rustfmt_fail_silently = 0
-
-"=====================================================
-"" fzf
-"=====================================================
-let g:fzf_preview_window = ''
-let g:fzf_preview_window = 'right:60%'
-let g:fzf_buffers_jump = 1
-let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
-let g:fzf_tags_command = 'ctags -R'
-let g:fzf_commands_expect = 'alt-enter,ctrl-x'
 
 let g:easytags_syntax_keyword = 'always'
 
@@ -83,21 +83,7 @@ vno <left> <Nop>
 vno <right> <Nop>
 vno <up> <Nop>
 
-noremap <Leader>ff :Rg -w
-noremap <silent><Leader>fc :Rg -tcpp -w <cword><cr>
-noremap <silent><Leader>fp :Rg -tpy -w <cword><cr>
-
 set background=dark
-let g:fzf_tags_command = 'ctags -R'
-
-" Open hotkeys
-nmap <Leader><space> :Files<CR>
-nmap <Leader>b :Buffers<CR>
-nmap <Leader>t :BTags<CR>
-" nmap <Leader>E :Lexplore<CR>
-nmap <Leader>l :BLines<CR>
-nmap <Leader>m :Marks<CR>
-nmap <Leader>c :Commands<CR>
 
 set number
 set relativenumber
