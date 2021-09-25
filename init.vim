@@ -14,9 +14,7 @@ Plug 'preservim/tagbar'
 Plug 'ervandew/supertab'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'antoinemadec/coc-fzf'
-Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'sainnhe/sonokai'
-Plug 'sheerun/vim-polyglot'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
