@@ -5,7 +5,6 @@ Plug 'thaerkh/vim-indentguides'           " Visual representation of indents
 Plug 'rust-lang/rust.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'ryanoasis/vim-devicons'
-Plug 'jremmen/vim-ripgrep'
 Plug 'mtdl9/vim-log-highlighting'
 Plug 'preservim/tagbar'
 Plug 'ervandew/supertab'
