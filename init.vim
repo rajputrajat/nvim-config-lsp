@@ -16,7 +16,6 @@ Plug 'antoinemadec/coc-fzf'
 Plug 'sainnhe/sonokai'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'p00f/nvim-ts-rainbow'
-Plug 'SmiteshP/nvim-gps'
 Plug 'hoob3rt/lualine.nvim'
 
 call plug#end()
@@ -181,13 +180,6 @@ require'nvim-treesitter.configs'.setup {
         enable = true,
   }
 }
-local gps = require("nvim-gps")
-require('lualine').setup({
-    sections = {
-        lualine_c = {
-            { gps.get_location, condition = gps.is_available },
-        }
-    }
-})
+require('lualine').setup()
 EOF
 
