@@ -17,6 +17,7 @@ Plug 'antoinemadec/coc-fzf'
 Plug 'sainnhe/sonokai'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'nvim-treesitter/nvim-treesitter'
 call plug#end()
 
 nnoremap <Space> <Nop>
@@ -172,4 +173,23 @@ nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
 
-"set shell=pwsh.exe
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+    ensure_installed = "maintained",
+    rainbow = {
+        enable = true,
+        extended_mode = true,
+        max_file_lines = 1000,
+    },
+    highlight = {
+        enable = true
+    },
+    indent = {
+        enable = true
+    },
+    autotag = {
+        enable = true,
+  }
+}
+EOF
+
