@@ -110,7 +110,7 @@ let g:fzf_tags_command = 'ctags -R'
 nmap <Leader><space> :Files<CR>
 nmap <Leader>b :Buffers<CR>
 nmap <Leader>t :BTags<CR>
-nmap <Leader>e :Lexplore<CR>
+" nmap <Leader>E :Lexplore<CR>
 nmap <Leader>l :BLines<CR>
 nmap <Leader>m :Marks<CR>
 nmap <Leader>c :Commands<CR>
