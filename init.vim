@@ -157,9 +157,8 @@ augroup NrHighlight
     autocmd WinLeave * set nocul
 augroup END
 
-hi ActiveWindow ctermbg=None ctermfg=None guibg=#1b1b1b
-"hi InactiveWindow guibg=#102027
-hi InactiveWindow guibg=#424242
+hi ActiveWindow ctermbg=None ctermfg=None guibg=#272727
+hi InactiveWindow guibg=#616161
 set winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow
 
 tnoremap <A-h> <C-\><C-N><C-w>h
