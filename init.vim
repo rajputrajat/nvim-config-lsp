@@ -14,8 +14,9 @@ Plug 'preservim/tagbar'
 Plug 'ervandew/supertab'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'antoinemadec/coc-fzf'
-Plug 'srcery-colors/srcery-vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'sainnhe/sonokai'
+Plug 'sheerun/vim-polyglot'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
@@ -29,9 +30,10 @@ let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
 let g:cpp_posix_standard = 1
 
-colorscheme srcery
-let g:srcery_italic = 1
-let g:lightline = { 'colorscheme': 'srcery' }
+colorscheme sonokai
+let g:sonokai_style = 'default'
+let g:sonokai_enable_italic = 1
+let g:sonokai_disable_italic_comment = 1
 
 let g:SuperTabDefaultCompletionType = "<c-n>"
 set completeopt=menuone,noinsert,noselect
@@ -52,7 +54,7 @@ let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#formatter='unique_tail_improved'
 let g:airline_powerline_fonts=1
-let g:airline_theme='papercolor'
+let g:airline_theme='sonokai'
 
 let g:ale_sign_column_always = 1
 "let g:ale_linters = {'rust': ['analyzer']}
