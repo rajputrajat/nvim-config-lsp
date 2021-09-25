@@ -17,7 +17,7 @@ Plug 'antoinemadec/coc-fzf'
 Plug 'sainnhe/sonokai'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
 nnoremap <Space> <Nop>
@@ -175,11 +175,10 @@ nnoremap <A-l> <C-w>l
 
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-    ensure_installed = "maintained",
-    rainbow = {
-        enable = true,
-        extended_mode = true,
-        max_file_lines = 1000,
+    ensure_installed = {
+        "bash", "c", "c_sharp", "cmake", "comment", "cpp", "go", "html", "java", "javascript",
+        "json", "kotlin", "lua", "python", "php", "ruby", "rust", "perl", "toml", "typescript",
+        "vim", "yaml", "zig"
     },
     highlight = {
         enable = true
