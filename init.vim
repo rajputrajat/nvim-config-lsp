@@ -4,7 +4,6 @@ call plug#begin('~/AppData/Local/nvim/plugged')
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'thaerkh/vim-indentguides'           " Visual representation of indents
-Plug 'junegunn/rainbow_parentheses.vim'       " Rainbow Parentheses
 Plug 'rust-lang/rust.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'ryanoasis/vim-devicons'
@@ -15,21 +14,16 @@ Plug 'ervandew/supertab'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'antoinemadec/coc-fzf'
 Plug 'sainnhe/sonokai'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'p00f/nvim-ts-rainbow'
+Plug 'SmiteshP/nvim-gps'
+Plug 'hoob3rt/lualine.nvim'
 
 call plug#end()
 
 nnoremap <Space> <Nop>
 nnoremap <silent> <leader> :LeaderMapper "<Space>"<CR>
 vnoremap <silent> <leader> :LeaderMapper "<Space>"<CR>
-
-let g:cpp_class_scope_highlight = 1
-let g:cpp_member_variable_highlight = 1
-let g:cpp_class_decl_highlight = 1
-let g:cpp_posix_standard = 1
 
 colorscheme sonokai
 let g:sonokai_style = 'default'
@@ -51,19 +45,9 @@ nnoremap <Leader>x :TagbarToggle<CR>
 
 let g:python3_host_prog = 'C:/Users/rajput/AppData/Local/Programs/Python/Python39/python3.exe'
 
-let g:airline#extensions#ale#enabled = 1
-let g:airline#extensions#tabline#enabled=1
-let g:airline#extensions#tabline#formatter='unique_tail_improved'
-let g:airline_powerline_fonts=1
-let g:airline_theme='sonokai'
 
 let g:ale_sign_column_always = 1
 "let g:ale_linters = {'rust': ['analyzer']}
-
-"=====================================================
-"" Rainbow Parentheses Autoload
-"=====================================================
-au VimEnter * RainbowParentheses
 
 set foldmethod=manual
 set foldlevel=0
@@ -197,5 +181,13 @@ require'nvim-treesitter.configs'.setup {
         enable = true,
   }
 }
+local gps = require("nvim-gps")
+require('lualine').setup({
+    sections = {
+        lualine_c = {
+            { gps.get_location, condition = gps.is_available },
+        }
+    }
+})
 EOF
 
