@@ -18,6 +18,8 @@ Plug 'sainnhe/sonokai'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'p00f/nvim-ts-rainbow'
+
 call plug#end()
 
 nnoremap <Space> <Nop>
@@ -179,6 +181,11 @@ require'nvim-treesitter.configs'.setup {
         "bash", "c", "c_sharp", "cmake", "comment", "cpp", "go", "html", "java", "javascript",
         "json", "kotlin", "lua", "python", "php", "ruby", "rust", "perl", "toml", "typescript",
         "vim", "yaml", "zig"
+    },
+    rainbow = {
+        enable = true,
+        extended_mode = true,
+        max_file_lines = 1000,
     },
     highlight = {
         enable = true
