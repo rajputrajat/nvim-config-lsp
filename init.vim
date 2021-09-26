@@ -4,7 +4,6 @@ call plug#begin('~/AppData/Local/nvim/plugged')
 Plug 'thaerkh/vim-indentguides'           " Visual representation of indents
 Plug 'rust-lang/rust.vim'
 Plug 'tomtom/tcomment_vim'
-Plug 'ryanoasis/vim-devicons'
 Plug 'mtdl9/vim-log-highlighting'
 Plug 'preservim/tagbar'
 Plug 'ervandew/supertab'
@@ -15,6 +14,8 @@ Plug 'p00f/nvim-ts-rainbow'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'kyazdani42/nvim-web-devicons' " for file icons
+Plug 'kyazdani42/nvim-tree.lua'
 
 call plug#end()
 
