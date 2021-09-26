@@ -34,6 +34,7 @@ nnoremap <leader>k        <cmd>Telescope keymaps<cr>
 nnoremap <leader>r        <cmd>Telescope registers<cr>
 nnoremap <leader>m        <cmd>Telescope marks<cr>
 nnoremap <leader>c        <cmd>Telescope commands<cr>
+nnoremap <leader>e        <cmd>NerdTreeToggle<cr>
 
 colorscheme sonokai
 let g:sonokai_style = 'default'
