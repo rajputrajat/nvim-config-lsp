@@ -144,6 +144,11 @@ nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
 
+let g:nvim_tree_side = 'right'
+let g:nvim_tree_width = 50
+let g:nvim_tree_ignore = [ '.git', 'node_modules', '.cache', '.vscode', '.svn' ]
+let g:nvim_tree_indent_markers = 1
+
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
     ensure_installed = {
