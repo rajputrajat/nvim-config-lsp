@@ -50,8 +50,8 @@ set completeopt=menuone,noinsert,noselect
 let g:tagbar_autofocus=0
 let g:tagbar_width=50
 let g:tagbar_position="left"
-autocmd BufEnter *.py,*.rs,*.c*,*.h*,*.js,*.ts :call tagbar#autoopen(0)
-autocmd BufWinLeave * :TagbarClose
+" autocmd BufEnter *.py,*.rs,*.c*,*.h*,*.js,*.ts :call tagbar#autoopen(0)
+" autocmd BufWinLeave * :TagbarClose
 nnoremap <Leader>x :TagbarToggle<CR>
 
 let g:python3_host_prog = 'C:/Users/rajput/AppData/Local/Programs/Python/Python39/python3.exe'
