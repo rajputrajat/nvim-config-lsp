@@ -89,7 +89,7 @@ set number
 set relativenumber
 set cursorline
 set colorcolumn=100
-set mouse=nv
+" set mouse=nv
 set modeline
 set report=2
 set list
