@@ -38,6 +38,7 @@ nnoremap <leader>r        <cmd>Telescope registers<cr>
 nnoremap <leader>m        <cmd>Telescope marks<cr>
 nnoremap <leader>c        <cmd>Telescope commands<cr>
 nnoremap <leader>e        <cmd>NvimTreeToggle<cr>
+nnoremap <leader>o        <cmd>CocOutline<cr>
 
 colorscheme sonokai
 let g:sonokai_style = 'default'
