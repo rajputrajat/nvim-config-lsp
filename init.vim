@@ -109,7 +109,7 @@ set guifont=Hack\ NF:h9
 set linespace=5
 set updatetime=300
 set numberwidth=8
-set signcolumn=number
+set signcolumn=yes
 set nowrap
 set nobackup
 set nowritebackup
