@@ -105,10 +105,14 @@ set laststatus=2
 set termguicolors
 set guifont=Hack\ NF:h9
 set linespace=5
-set updatetime=800
-set numberwidth=6
-set signcolumn=yes
+set updatetime=300
+set numberwidth=8
+set signcolumn=number
 set nowrap
+set nobackup
+set nowritebackup
+set shortmess+=c
+
 filetype plugin indent on
 
 source c:/Users/rajput/AppData/Local/nvim/coc.vim
