@@ -20,7 +20,7 @@ require'nvim-treesitter.configs'.setup {
     },
     refactor = {
         highlight_definitions = { enable = true },
-        highlight_current_scope = { enable = true },
+        -- highlight_current_scope = { enable = true },
         smart_rename = {
             enable = true,
             keymaps = {
@@ -45,12 +45,12 @@ require'nvim-treesitter.configs'.setup {
             lookahead = true,
             keymaps = {
                 -- You can use the capture groups defined in textobjects.scm
-                ["af"] = "@function.outer",
-                ["if"] = "@function.inner",
-                ["ac"] = "@class.outer",
-                ["ic"] = "@class.inner",
+                ["<leader>fo"] = "@function.outer",
+                ["<leader>fi"] = "@function.inner",
+                ["<leader>co"] = "@class.outer",
+                ["<leader>ci"] = "@class.inner",
                 -- Or you can define your own textobjects like this
-                ["iF"] = {
+                ["<leader>iF"] = {
                     python = "(function_definition) @function",
                     cpp = "(function_definition) @function",
                     c = "(function_definition) @function",
