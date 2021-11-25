@@ -9,7 +9,7 @@ vim.g.rustfmt_fail_silently = 0
 require'nvim-treesitter.configs'.setup {
     ensure_installed = {
         "bash", "c", "c_sharp", "cmake", "comment", "cpp", "go", "html", "java", "javascript",
-        "json", "kotlin", "lua", "python", "php", "ruby", "rust", "perl", "toml", "typescript",
+        "json", "kotlin", "lua", "python", "php", "ruby", "rust", "toml", "typescript",
         "vim", "yaml", "zig"
     },
     rainbow = {
