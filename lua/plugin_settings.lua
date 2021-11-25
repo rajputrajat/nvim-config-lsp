@@ -1,3 +1,13 @@
+-- vim.g.nvim_tree.setup.follow = 1
+vim.g.nvim_tree_indent_markers = 1
+vim.g.nvim_tree_highlight_opened_files = 1
+vim.g.nvim_tree_width = 50
+-- vim.g.nvim_tree.setup.ignore = { '.git', 'node_modules', '.cache', '.vscode', '.svn' }
+
+vim.g.rustfmt_autosave = 1
+vim.g.rustfmt_emit_files = 1
+vim.g.rustfmt_fail_silently = 0
+
 require'nvim-treesitter.configs'.setup {
     ensure_installed = {
         "bash", "c", "c_sharp", "cmake", "comment", "cpp", "go", "html", "java", "javascript",
