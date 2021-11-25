@@ -112,7 +112,8 @@ set clipboard^=unnamed,unnamedplus
 
 filetype plugin indent on
 
-source c:/Users/rajput/AppData/Local/nvim/coc.vim
+" source c:/Users/rajput/AppData/Local/nvim/coc.vim
+runtime coc.vim
 
 highlight comment gui=italic
 highlight string gui=italic
