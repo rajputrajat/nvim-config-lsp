@@ -1,6 +1,7 @@
 let mapleader = "\<Space>"
 
-call plug#begin('~/AppData/Local/nvim/plugged')
+" call plug#begin('~/AppData/Local/nvim/plugged')
+call plug#begin()
 
 Plug 'thaerkh/vim-indentguides'           " Visual representation of indents
 Plug 'rust-lang/rust.vim'
