@@ -6,7 +6,6 @@ Plug 'thaerkh/vim-indentguides'           " Visual representation of indents
 Plug 'rust-lang/rust.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'mtdl9/vim-log-highlighting'
-Plug 'preservim/tagbar'
 Plug 'ervandew/supertab'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sainnhe/sonokai'
@@ -49,16 +48,6 @@ let g:sonokai_disable_italic_comment = 1
 
 let g:SuperTabDefaultCompletionType = "<c-n>"
 set completeopt=menuone,noinsert,noselect
-
-"=====================================================
-"" TagBar settings
-"=====================================================
-let g:tagbar_autofocus=0
-let g:tagbar_width=50
-let g:tagbar_position="left"
-" autocmd BufEnter *.py,*.rs,*.c*,*.h*,*.js,*.ts :call tagbar#autoopen(0)
-" autocmd BufWinLeave * :TagbarClose
-nnoremap <Leader>x :TagbarToggle<CR>
 
 let g:python3_host_prog = 'C:/Users/rajput/AppData/Local/Programs/Python/Python39/python3.exe'
 
