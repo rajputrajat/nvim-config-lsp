@@ -20,10 +20,4 @@ vim.cmd [[
     hi ActiveWindow ctermbg=None ctermfg=None guibg=#272727
     hi InactiveWindow guibg=#616161
     set winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow
-
-    augroup NrHighlight
-        autocmd!
-        autocmd WinEnter * set cul
-        autocmd WinLeave * set nocul
-    augroup END
 ]]
