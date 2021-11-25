@@ -11,10 +11,12 @@ Plug 'ervandew/supertab'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sainnhe/sonokai'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'p00f/nvim-ts-rainbow'
-Plug 'hoob3rt/lualine.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-treesitter/nvim-treesitter-refactor'
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+Plug 'p00f/nvim-ts-rainbow'
+Plug 'hoob3rt/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'tikhomirov/vim-glsl'
@@ -115,6 +117,7 @@ set nowrap
 set nobackup
 set nowritebackup
 set shortmess+=c
+set clipboard^=unnamed,unnamedplus
 
 filetype plugin indent on
 
@@ -158,28 +161,5 @@ let g:nvim_tree_ignore = [ '.git', 'node_modules', '.cache', '.vscode', '.svn' ]
 let g:nvim_tree_indent_markers = 1
 
 lua <<EOF
-require'nvim-treesitter.configs'.setup {
-    ensure_installed = {
-        "bash", "c", "c_sharp", "cmake", "comment", "cpp", "go", "html", "java", "javascript",
-        "json", "kotlin", "lua", "python", "php", "ruby", "rust", "perl", "toml", "typescript",
-        "vim", "yaml", "zig"
-    },
-    rainbow = {
-        enable = true,
-        extended_mode = true,
-        max_file_lines = 1000,
-    },
-    highlight = {
-        enable = true
-    },
-    indent = {
-        enable = true
-    },
-    autotag = {
-        enable = true,
-  }
-}
-require('lualine').setup()
-require'nvim-tree'.setup()
+require'config'
 EOF
-
