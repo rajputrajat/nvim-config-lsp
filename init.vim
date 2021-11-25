@@ -50,7 +50,8 @@ let g:sonokai_disable_italic_comment = 1
 let g:SuperTabDefaultCompletionType = "<c-n>"
 set completeopt=menuone,noinsert,noselect
 
-let g:python3_host_prog = 'C:/Users/rajput/AppData/Local/Programs/Python/Python39/python3.exe'
+" let g:python3_host_prog = 'C:/Users/rajput/AppData/Local/Programs/Python/Python39/python3.exe'
+let g:python3_host_prog = 'python3'
 
 let g:ale_sign_column_always = 1
 "let g:ale_linters = {'rust': ['analyzer']}
