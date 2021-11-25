@@ -1,6 +1,8 @@
 local utils = require('utils')
 
 local cmd = vim.cmd
+local fn = vim.fn
+local g = vim.g
 local indent = 4
 
 cmd 'filetype plugin indent on'
@@ -40,13 +42,12 @@ utils.opt('o', 'updatetime', 300)
 utils.opt('w', 'foldmethod', 'manual')
 utils.opt('w', 'foldlevel', 0)
 
-if vim.fn.has('win32') then
-    vim.g.python3_host_prog = 'C:/Users/rajput/AppData/Local/Programs/Python/Python39/python3.exe'
+if fn.has('win32') == 1 then
+    g.python3_host_prog = '$HOME/AppData/Local/Programs/Python/Python39/python3.exe'
 else
-    vim.g.python3_host_prog = '/usr/bin/python3'
+    g.python3_host_prog = '/usr/bin/python3'
 end
 
-vim.g.python3_host_prog = 'python3.exe'
-vim.g.ale_sign_column_always = 1
+g.ale_sign_column_always = 1
 
-vim.cmd 'au TextYankPost * lua vim.highlight.on_yank {on_visual = false}'
+cmd 'au TextYankPost * lua vim.highlight.on_yank {on_visual = false}'
