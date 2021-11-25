@@ -92,6 +92,8 @@ set showcmd
 set cmdheight=2
 set encoding=utf-8
 set expandtab
+set smartindent
+set hidden
 set tabstop=4
 set shiftwidth=4
 set autoindent
@@ -148,6 +150,8 @@ let g:nvim_tree_side = 'right'
 let g:nvim_tree_width = 50
 let g:nvim_tree_ignore = [ '.git', 'node_modules', '.cache', '.vscode', '.svn' ]
 let g:nvim_tree_indent_markers = 1
+let g:nvim_tree_follow = 1
+let g:nvim_tree_highlight_opened_files = 1
 
 lua <<EOF
 require'config'
