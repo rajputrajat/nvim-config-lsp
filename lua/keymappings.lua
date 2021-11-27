@@ -19,4 +19,14 @@ vim.cmd [[
     nnoremap <leader>c        <cmd>Telescope commands<cr>
     nnoremap <leader>e        <cmd>NvimTreeToggle<cr>
     nnoremap <leader>o        <cmd>CocOutline<cr>
+
+    nnoremap <leader>;u       <cmd>Telescope coc mru<cr>
+    nnoremap <leader>;c       <cmd>Telescope coc commands<cr>
+    nnoremap <leader>;l       <cmd>Telescope coc locations<cr>
+    nnoremap <leader>;r       <cmd>Telescope coc references<cr>
+    nnoremap <leader>;d       <cmd>Telescope coc definitions<cr>
+    nnoremap <leader>;d       <cmd>Telescope coc workspace_diagnostic<cr>
+    nnoremap <leader>;s       <cmd>Telescope coc workspace_symbols<cr>
+    nnoremap <leader>;s       <cmd>Telescope coc workspace_symbols<cr>
+    nnoremap <leader>;o       <cmd>Telescope coc workspace_symbols<cr>
 ]]

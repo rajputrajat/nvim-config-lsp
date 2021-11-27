@@ -28,6 +28,7 @@ return require('packer').startup(function(use)
     use { 'kyazdani42/nvim-tree.lua' }
     use { 'tikhomirov/vim-glsl' }
     use { 'andys8/vscode-jest-snippets' }
+    use { 'fannheyward/telescope-coc.nvim' }
 
     if packer_bootstrap then
         require('packer').sync()

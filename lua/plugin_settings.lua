@@ -98,4 +98,5 @@ require'nvim-treesitter.configs'.setup {
     },
 }
 require('lualine').setup()
-require('nvim-tree').setup{}
+require('nvim-tree').setup()
+require('telescope').load_extension('coc')
