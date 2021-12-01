@@ -1,6 +1,6 @@
 vim.cmd [[
     colorscheme sonokai
-    let g:sonokai_style = 'default'
+    let g:sonokai_style = 'espresso'
     let g:sonokai_enable_italic = 1
     let g:sonokai_disable_italic_comment = 1
 
