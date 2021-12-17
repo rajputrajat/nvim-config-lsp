@@ -25,8 +25,5 @@ vim.cmd [[
     nnoremap <leader>;l       <cmd>Telescope coc locations<cr>
     nnoremap <leader>;r       <cmd>Telescope coc references<cr>
     nnoremap <leader>;d       <cmd>Telescope coc definitions<cr>
-    nnoremap <leader>;d       <cmd>Telescope coc workspace_diagnostic<cr>
     nnoremap <leader>;s       <cmd>Telescope coc workspace_symbols<cr>
-    nnoremap <leader>;s       <cmd>Telescope coc workspace_symbols<cr>
-    nnoremap <leader>;o       <cmd>Telescope coc workspace_symbols<cr>
 ]]
