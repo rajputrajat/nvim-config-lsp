@@ -25,7 +25,7 @@ return require('packer').startup(function(use)
     use { 'p00f/nvim-ts-rainbow' }
     use { 'hoob3rt/lualine.nvim' }
     use { 'kyazdani42/nvim-web-devicons' }
-    use { 'kyazdani42/nvim-tree.lua' }
+    -- use { 'kyazdani42/nvim-tree.lua' }
     use { 'tikhomirov/vim-glsl' }
     use { 'andys8/vscode-jest-snippets' }
     use { 'fannheyward/telescope-coc.nvim' }

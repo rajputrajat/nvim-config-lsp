@@ -1,6 +1,6 @@
-vim.g.nvim_tree_indent_markers = 1
-vim.g.nvim_tree_highlight_opened_files = 1
-vim.g.nvim_tree_width = 50
+-- vim.g.nvim_tree_indent_markers = 1
+-- vim.g.nvim_tree_highlight_opened_files = 1
+-- vim.g.nvim_tree_width = 50
 
 vim.g.rustfmt_autosave = 1
 vim.g.rustfmt_emit_files = 1
@@ -98,5 +98,5 @@ require'nvim-treesitter.configs'.setup {
     },
 }
 require('lualine').setup()
-require('nvim-tree').setup()
+-- require('nvim-tree').setup()
 require('telescope').load_extension('coc')
