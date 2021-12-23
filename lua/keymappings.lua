@@ -25,4 +25,7 @@ vim.cmd [[
     nnoremap <leader>;r       <cmd>Telescope coc references<cr>
     nnoremap <leader>;d       <cmd>Telescope coc definitions<cr>
     nnoremap <leader>;s       <cmd>Telescope coc workspace_symbols<cr>
+
+    nnoremap <c-j>            <cmd>cn<cr>
+    nnoremap <c-k>            <cmd>cp<cr>
 ]]
