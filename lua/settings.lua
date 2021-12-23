@@ -41,6 +41,7 @@ utils.opt('w', 'signcolumn', 'yes')
 utils.opt('o', 'updatetime', 300)
 utils.opt('w', 'foldmethod', 'manual')
 utils.opt('w', 'foldlevel', 0)
+utils.opt('o', 'grepprg', 'rg --vimgrep --no-heading --smart-case')
 
 if fn.has('win32') == 1 then
     g.python3_host_prog = '$HOME/AppData/Local/Programs/Python/Python39/python3.exe'
