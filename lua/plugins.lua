@@ -16,19 +16,19 @@ return require('packer').startup(function(use)
     use { 'neoclide/coc.nvim', branch = 'release' }
     use { 'sainnhe/sonokai' }
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-    use {
-        'nvim-telescope/telescope.nvim',
-        requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
-    }
-    use { 'nvim-treesitter/nvim-treesitter-refactor' }
-    use { 'nvim-treesitter/nvim-treesitter-textobjects' }
+    -- use {
+    --     'nvim-telescope/telescope.nvim',
+    --     requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
+    -- }
+    -- use { 'nvim-treesitter/nvim-treesitter-refactor' }
+    -- use { 'nvim-treesitter/nvim-treesitter-textobjects' }
     use { 'p00f/nvim-ts-rainbow' }
     use { 'hoob3rt/lualine.nvim' }
     use { 'kyazdani42/nvim-web-devicons' }
     -- use { 'kyazdani42/nvim-tree.lua' }
     use { 'tikhomirov/vim-glsl' }
     use { 'andys8/vscode-jest-snippets' }
-    use { 'fannheyward/telescope-coc.nvim' }
+    -- use { 'fannheyward/telescope-coc.nvim' }
 
     if packer_bootstrap then
         require('packer').sync()
