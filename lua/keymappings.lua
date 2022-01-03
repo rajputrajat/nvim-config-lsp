@@ -28,4 +28,6 @@ vim.cmd [[
 
     nnoremap <c-j>            <cmd>cn<cr>
     nnoremap <c-k>            <cmd>cp<cr>
+    nnoremap <leader>e        <cmd>e %:h<cr>
+"    nnoremap <leader>f        <cmd>grep! <cword> -w && call OpenQuickFixList()<cr>
 ]]
