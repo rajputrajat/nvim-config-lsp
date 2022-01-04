@@ -18,29 +18,17 @@ require('packer').startup(function(use)
     use { 'neoclide/coc.nvim', branch = 'release' }
     use { 'sainnhe/sonokai' }
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-    -- use {
-    --     'nvim-telescope/telescope.nvim',
-    --     requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
-    -- }
-    -- use { 'nvim-treesitter/nvim-treesitter-refactor' }
-    -- use { 'nvim-treesitter/nvim-treesitter-textobjects' }
     use { 'p00f/nvim-ts-rainbow' }
     use { 'hoob3rt/lualine.nvim' }
     use { 'kyazdani42/nvim-web-devicons' }
-    -- use { 'kyazdani42/nvim-tree.lua' }
     use { 'tikhomirov/vim-glsl' }
     use { 'andys8/vscode-jest-snippets' }
-    -- use { 'fannheyward/telescope-coc.nvim' }
 
     if packer_bootstrap then
         require('packer').sync()
     end
 
 end)
-
--- vim.g.nvim_tree_indent_markers = 1
--- vim.g.nvim_tree_highlight_opened_files = 1
--- vim.g.nvim_tree_width = 50
 
 vim.g.rustfmt_autosave = 1
 vim.g.rustfmt_emit_files = 1
@@ -66,81 +54,10 @@ require'nvim-treesitter.configs'.setup {
     autotag = {
         enable = true,
     }
-    -- refactor = {
-    --     highlight_definitions = { enable = true },
-    --     -- highlight_current_scope = { enable = true },
-    --     smart_rename = {
-    --         enable = true,
-    --         keymaps = {
-    --             smart_rename = "grr",
-    --         },
-    --     },
-    --     navigation = {
-    --         enable = true,
-    --         keymaps = {
-    --             goto_definition = "gnd",
-    --             list_definitions = "gnD",
-    --             list_definitions_toc = "gO",
-    --             goto_next_usage = "<a-*>",
-    --             goto_previous_usage = "<a-#>",
-    --         },
-    --     },
-    -- },
-    -- textobjects = {
-    --     select = {
-    --         enable = true,
-    --         -- Automatically jump forward to textobj, similar to targets.vim
-    --         lookahead = true,
-    --         keymaps = {
-    --             -- You can use the capture groups defined in textobjects.scm
-    --             ["<leader>fo"] = "@function.outer",
-    --             ["<leader>fi"] = "@function.inner",
-    --             ["<leader>co"] = "@class.outer",
-    --             ["<leader>ci"] = "@class.inner",
-    --             -- Or you can define your own textobjects like this
-    --             ["<leader>iF"] = {
-    --                 python = "(function_definition) @function",
-    --                 cpp = "(function_definition) @function",
-    --                 c = "(function_definition) @function",
-    --                 java = "(method_declaration) @function",
-    --             },
-    --         },
-    --     },
-    --     swap = {
-    --         enable = true,
-    --         swap_next = {
-    --             ["<leader>a"] = "@parameter.inner",
-    --         },
-    --         swap_previous = {
-    --             ["<leader>A"] = "@parameter.inner",
-    --         },
-    --     },
-    --     move = {
-    --         enable = true,
-    --         set_jumps = true, -- whether to set jumps in the jumplist
-    --         goto_next_start = {
-    --             ["]m"] = "@function.outer",
-    --             ["]]"] = "@class.outer",
-    --         },
-    --         goto_next_end = {
-    --             ["]M"] = "@function.outer",
-    --             ["]["] = "@class.outer",
-    --         },
-    --         goto_previous_start = {
-    --             ["[m"] = "@function.outer",
-    --             ["[["] = "@class.outer",
-    --         },
-    --         goto_previous_end = {
-    --             ["[M"] = "@function.outer",
-    --             ["[]"] = "@class.outer",
-    --         },
-    --     },
-    -- },
 }
 
 require('lualine').setup()
--- require('nvim-tree').setup()
--- require('telescope').load_extension('coc')
+
 vim.cmd [[
 " Use <c-space> to trigger completion.
 if has('nvim')
@@ -367,8 +284,9 @@ utils.opt('w', 'cursorline', true)
 utils.opt('w', 'colorcolumn', '100')
 utils.opt('b', 'modeline', true)
 utils.opt('o', 'report', 2)
-utils.opt('w', 'list', true)
 utils.opt('o', 'showcmd', true)
+--utils.opt('o', 'listchars', 'eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣')
+utils.opt('o', 'list', false)
 utils.opt('o', 'cmdheight', 2)
 utils.opt('o', 'encoding', "utf-8")
 utils.opt('b', 'expandtab', true)
