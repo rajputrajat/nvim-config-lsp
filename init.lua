@@ -7,7 +7,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
     packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
 end
 
-return require('packer').startup(function(use)
+require('packer').startup(function(use)
 
     use { 'wbthomason/packer.nvim' }
     use { 'thaerkh/vim-indentguides'}
@@ -352,8 +352,6 @@ function utils.map(mode, lhs, rhs, opts)
 	if opts then options = vim.tbl_extend('force', options, opts) end
 	vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
-
-return utils
 
 local cmd = vim.cmd
 local fn = vim.fn
