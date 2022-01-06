@@ -5,5 +5,5 @@
     "coc.preferences.colorSupport": false,
     "outline.keepWindow": true,
     "outline.splitCommand": "botright 50vs",
-    "coc.preferences.semanticTokensHighlights": true
+    "coc.preferences.semanticTokensHighlights": false
 }

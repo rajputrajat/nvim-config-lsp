@@ -23,6 +23,7 @@ require('packer').startup(function(use)
     use { 'kyazdani42/nvim-web-devicons' }
     use { 'tikhomirov/vim-glsl' }
     use { 'andys8/vscode-jest-snippets' }
+    use { 'tpope/vim-sleuth' }
 
     if packer_bootstrap then
         require('packer').sync()
@@ -46,9 +47,6 @@ require'nvim-treesitter.configs'.setup {
         max_file_lines = 1000,
     },
     highlight = {
-        enable = true
-    },
-    indent = {
         enable = true
     },
     autotag = {
@@ -273,9 +271,7 @@ end
 local cmd = vim.cmd
 local fn = vim.fn
 local g = vim.g
-local indent = 4
 
-cmd 'filetype plugin indent on'
 utils.opt('o', 'background', 'dark')
 utils.opt('o', 're', 0)
 utils.opt('w', 'number', true)
@@ -285,18 +281,13 @@ utils.opt('w', 'colorcolumn', '100')
 utils.opt('b', 'modeline', true)
 utils.opt('o', 'report', 2)
 utils.opt('o', 'showcmd', true)
---utils.opt('o', 'listchars', 'eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣')
 utils.opt('o', 'list', false)
 utils.opt('o', 'cmdheight', 2)
 utils.opt('o', 'encoding', "utf-8")
 utils.opt('b', 'expandtab', true)
-utils.opt('b', 'smartindent', true)
 utils.opt('o', 'hidden', true)
-utils.opt('b', 'tabstop', indent)
-utils.opt('o', 'shiftwidth', indent)
 utils.opt('o', 'splitbelow', true)
 utils.opt('o', 'splitright', true)
-utils.opt('o', 'autoindent', true)
 utils.opt('o', 'ignorecase', true)
 utils.opt('o', 'scrolloff', 4 )
 utils.opt('o', 'shiftround', true)
@@ -313,6 +304,7 @@ utils.opt('o', 'updatetime', 300)
 utils.opt('w', 'foldmethod', 'manual')
 utils.opt('w', 'foldlevel', 0)
 utils.opt('o', 'grepprg', 'rg --vimgrep --no-heading --smart-case')
+--utils.opt('o', 'listchars', 'eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣')
 
 if fn.has('win32') == 1 then
     g.python3_host_prog = '$HOME/AppData/Local/Programs/Python/Python39/python3.exe'
