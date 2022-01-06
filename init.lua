@@ -320,7 +320,9 @@ cmd 'au TextYankPost * lua vim.highlight.on_yank {on_visual = false}'
 
 vim.cmd [[
 fu! SaveSess()
-    execute 'mksession! ' . getcwd() . '/.session.vim'
+    if filereadable(getcwd() . '/.session.vim')
+        execute 'mksession! ' . getcwd() . '/.session.vim'
+    endif
 endfunction
 
 fu! RestoreSess()
