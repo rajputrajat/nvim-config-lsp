@@ -25,6 +25,7 @@ require('packer').startup(function(use)
     use { 'andys8/vscode-jest-snippets' }
     use { 'tpope/vim-sleuth' }
     use { 'tpope/vim-fugitive' }
+    use { 'APZelos/blamer.nvim' }
 
     if packer_bootstrap then
         require('packer').sync()
