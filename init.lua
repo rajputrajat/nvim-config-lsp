@@ -24,6 +24,7 @@ require('packer').startup(function(use)
     use { 'tikhomirov/vim-glsl' }
     use { 'andys8/vscode-jest-snippets' }
     use { 'tpope/vim-sleuth' }
+    use { 'tpope/vim-fugitive' }
 
     if packer_bootstrap then
         require('packer').sync()
