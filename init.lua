@@ -319,6 +319,8 @@ end
 
 g.ale_sign_column_always = 1
 g.localvimrc_name = ".vim/lvimrc"
+g.localvimrc_ask = 0
+g.localvimrc_sandbox = 0
 
 cmd 'au TextYankPost * lua vim.highlight.on_yank {on_visual = false}'
 
