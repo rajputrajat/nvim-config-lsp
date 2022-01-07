@@ -26,6 +26,7 @@ require('packer').startup(function(use)
     use { 'tpope/vim-sleuth' }
     use { 'tpope/vim-fugitive' }
     use { 'APZelos/blamer.nvim' }
+    use { 'embear/vim-localvimrc' }
 
     if packer_bootstrap then
         require('packer').sync()
@@ -317,6 +318,7 @@ else
 end
 
 g.ale_sign_column_always = 1
+g.localvimrc_name = ".vim/lvimrc"
 
 cmd 'au TextYankPost * lua vim.highlight.on_yank {on_visual = false}'
 
