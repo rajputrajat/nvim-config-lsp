@@ -56,6 +56,7 @@ require'nvim-treesitter.configs'.setup {
     }
 }
 
+
 require('lualine').setup()
 
 vim.cmd [[
@@ -253,6 +254,7 @@ vim.cmd [[
     nnoremap <c-k>            <cmd>cp<cr>
     nnoremap <leader>e        <cmd>e %:h<cr>
 "    nnoremap <leader>f        <cmd>grep! <cword> -w && call OpenQuickFixList()<cr>
+
 ]]
 
 local utils = { }
@@ -319,18 +321,29 @@ g.ale_sign_column_always = 1
 cmd 'au TextYankPost * lua vim.highlight.on_yank {on_visual = false}'
 
 vim.cmd [[
+fu! CreateSess()
+    execute 'call mkdir(getcwd() . "/.vim", "p")'
+    execute 'mksession! %:p:h/.vim/session.vim'
+endfunction
+
+" add custom Mks command
+command Mks :call CreateSess()
+
 fu! SaveSess()
-    if filereadable(getcwd() . '/.session.vim')
-        execute 'mksession! ' . getcwd() . '/.session.vim'
+    if filereadable(getcwd() . '/.vim/session.vim')
+        execute 'mksession! ' . getcwd() . '/.vim/session.vim'
     endif
 endfunction
 
 fu! RestoreSess()
-if filereadable(getcwd() . '/.session.vim')
-    execute 'so ' . getcwd() . '/.session.vim'
+if filereadable(getcwd() . '/.vim/session.vim')
+    execute 'so ' . getcwd() . '/.vim/session.vim'
 endif
 endfunction
 
 autocmd VimLeave * call SaveSess()
 autocmd VimEnter * nested call RestoreSess()
+
+" toggle coc diagnostics
+command DisDiag :call CocAction('diagnosticToggle')
 ]]
