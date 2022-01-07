@@ -345,5 +345,5 @@ autocmd VimLeave * call SaveSess()
 autocmd VimEnter * nested call RestoreSess()
 
 " toggle coc diagnostics
-command DisDiag :call CocAction('diagnosticToggle')
+command DiagToggle :call CocAction('diagnosticToggle')
 ]]
