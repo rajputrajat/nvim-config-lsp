@@ -27,6 +27,7 @@ require('packer').startup(function(use)
     use { 'tpope/vim-fugitive' }
     use { 'APZelos/blamer.nvim' }
     use { 'embear/vim-localvimrc' }
+    use { 'rhysd/vim-clang-format' }
 
     if packer_bootstrap then
         require('packer').sync()
