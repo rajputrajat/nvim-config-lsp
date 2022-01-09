@@ -22,9 +22,7 @@ require('packer').startup(function(use)
     use { 'hoob3rt/lualine.nvim' }
     use { 'kyazdani42/nvim-web-devicons' }
     use { 'tikhomirov/vim-glsl' }
-    use { 'andys8/vscode-jest-snippets' }
     use { 'tpope/vim-sleuth' }
-    use { 'tpope/vim-fugitive' }
     use { 'APZelos/blamer.nvim' }
     use { 'embear/vim-localvimrc' }
     use { 'rhysd/vim-clang-format' }
