@@ -282,7 +282,7 @@ vim.cmd [[
     augroup END
 
     hi ActiveWindow ctermbg=None ctermfg=None guibg=#272727
-    hi InactiveWindow guibg=#616161
+    hi InactiveWindow guibg=#414141
     set winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow
 
     nnoremap <Space> <Nop>
