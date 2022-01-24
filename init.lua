@@ -48,13 +48,16 @@ require'nvim-treesitter.configs'.setup {
     rainbow = {
         enable = true,
         extended_mode = true,
-        max_file_lines = 1000,
+        max_file_lines = 1000
     },
     highlight = {
         enable = true
     },
     autotag = {
-        enable = true,
+        enable = true
+    },
+    indent = {
+        enable = true
     }
 }
 
@@ -105,8 +108,9 @@ utils.opt('w', 'wrap', false)
 utils.opt('w', 'numberwidth', 6)
 utils.opt('w', 'signcolumn', 'yes')
 utils.opt('o', 'updatetime', 200)
-utils.opt('w', 'foldmethod', 'manual')
+utils.opt('w', 'foldmethod', 'expr')
 utils.opt('w', 'foldlevel', 0)
+utils.opt('w', 'foldexpr', 'nvim_treesitter#foldexpr()')
 utils.opt('o', 'grepprg', 'rg --vimgrep --no-heading --smart-case')
 utils.opt('o', 'cscopequickfix', 's-,c-,d-,i-,t-,e-')
 --utils.opt('o', 'listchars', 'eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣')
@@ -117,7 +121,6 @@ else
     g.python3_host_prog = '/usr/bin/python3'
 end
 
-g.ale_sign_column_always = 1
 g.localvimrc_name = ".vim/lvimrc"
 g.localvimrc_ask = 0
 g.localvimrc_sandbox = 0
@@ -200,15 +203,12 @@ cmd [[
     xmap ac <Plug>(coc-classobj-a)
     omap ac <Plug>(coc-classobj-a)
 
-    " Remap <C-f> and <C-b> for scroll float windows/popups.
-    if has('nvim-0.4.0') || has('patch-8.2.0750')
-        nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-        nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-        inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-        inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
-        vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-        vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-    endif
+    nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+    nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+    inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+    inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+    vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+    vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 
     " Use CTRL-S for selections ranges.
     " Requires 'textDocument/selectionRange' support of language server.
