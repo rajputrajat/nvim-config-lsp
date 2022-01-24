@@ -280,7 +280,7 @@ cmd [[
         autocmd WinLeave * set nocul
     augroup END
 
-    hi ActiveWindow ctermbg=None ctermfg=None guibg=#272727
+    hi ActiveWindow ctermbg=None ctermfg=None guibg=#2B2B2B
     hi InactiveWindow guibg=#313131
     set winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow
 
