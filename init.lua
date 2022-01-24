@@ -14,7 +14,7 @@ require('packer').startup(function(use)
     use { 'rust-lang/rust.vim' }
     use { 'tomtom/tcomment_vim' }
     use { 'mtdl9/vim-log-highlighting' }
-    use { 'ervandew/supertab' }
+    -- use { 'ervandew/supertab' }
     use { 'neoclide/coc.nvim', branch = 'release' }
     use { 'sainnhe/sonokai' }
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
