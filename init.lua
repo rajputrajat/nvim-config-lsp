@@ -26,7 +26,6 @@ require('packer').startup(function(use)
     use { 'kyazdani42/nvim-web-devicons' }
     use { 'tikhomirov/vim-glsl' }
     use { 'tpope/vim-sleuth' }
-    use { 'APZelos/blamer.nvim' }
     use { 'embear/vim-localvimrc' }
     use { 'rhysd/vim-clang-format' }
 
@@ -66,14 +65,14 @@ local utils = { }
 local scopes = {o = vim.o, b = vim.bo, w = vim.wo} 
 
 function utils.opt(scope, key, value)
-	scopes[scope][key] = value
-	if scope ~= 'o' then scopes['o'][key] = value end
+    scopes[scope][key] = value
+    if scope ~= 'o' then scopes['o'][key] = value end
 end
 
 function utils.map(mode, lhs, rhs, opts)
-	local options = {noremap = true, silent = true}
-	if opts then options = vim.tbl_extend('force', options, opts) end
-	vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+    local options = {noremap = true, silent = true}
+    if opts then options = vim.tbl_extend('force', options, opts) end
+    vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
 utils.opt('o', 'background', 'dark')
@@ -123,9 +122,9 @@ g.localvimrc_name = ".vim/lvimrc"
 g.localvimrc_ask = 0
 g.localvimrc_sandbox = 0
 
-cmd 'au TextYankPost * lua vim.highlight.on_yank {on_visual = false}'
+cmd [[
+    au TextYankPost * lua vim.highlight.on_yank {on_visual = false}
 
-vim.cmd [[
     " Use <c-space> to trigger completion.
     if has('nvim')
         inoremap <silent><expr> <c-space> coc#refresh()
@@ -289,7 +288,6 @@ vim.cmd [[
     nnoremap <silent> <leader> :LeaderMapper "<Space>"<CR>
     vnoremap <silent> <leader> :LeaderMapper "<Space>"<CR>
 
-    let g:SuperTabDefaultCompletionType = "<c-n>"
     set completeopt=menuone,noinsert,noselect
 
     nnoremap <leader>o        <cmd>CocOutline<cr>
