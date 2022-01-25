@@ -17,7 +17,6 @@ require('packer').startup(function(use)
     use { 'rust-lang/rust.vim' }
     use { 'tomtom/tcomment_vim' }
     use { 'mtdl9/vim-log-highlighting' }
-    -- use { 'ervandew/supertab' }
     use { 'neoclide/coc.nvim', branch = 'release' }
     use { 'sainnhe/sonokai' }
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
@@ -25,7 +24,6 @@ require('packer').startup(function(use)
     use { 'hoob3rt/lualine.nvim' }
     use { 'kyazdani42/nvim-web-devicons' }
     use { 'tikhomirov/vim-glsl' }
-    use { 'tpope/vim-sleuth' }
     use { 'embear/vim-localvimrc' }
     use { 'rhysd/vim-clang-format' }
 
@@ -78,6 +76,13 @@ function utils.map(mode, lhs, rhs, opts)
     vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
+local indent = 4
+
+utils.opt('b', 'smartindent', true)
+utils.opt('b', 'tabstop', indent)
+utils.opt('o', 'shiftwidth', indent)
+utils.opt('o', 'autoindent', true)
+utils.opt('b', 'expandtab', true)
 utils.opt('o', 'background', 'dark')
 utils.opt('o', 're', 0)
 utils.opt('w', 'number', true)
@@ -90,7 +95,6 @@ utils.opt('o', 'showcmd', true)
 utils.opt('o', 'list', false)
 utils.opt('o', 'cmdheight', 2)
 utils.opt('o', 'encoding', "utf-8")
-utils.opt('b', 'expandtab', true)
 utils.opt('o', 'hidden', true)
 utils.opt('o', 'splitbelow', true)
 utils.opt('o', 'splitright', true)
@@ -103,7 +107,6 @@ utils.opt('o', 'clipboard','unnamed,unnamedplus')
 utils.opt('o', 'termguicolors', true)
 utils.opt('o', 'laststatus', 2)
 utils.opt('o', 'linespace', 5)
-utils.opt('o', 'tabstop', 4)
 utils.opt('w', 'wrap', false)
 utils.opt('w', 'numberwidth', 6)
 utils.opt('w', 'signcolumn', 'yes')
