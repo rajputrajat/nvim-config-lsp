@@ -3,5 +3,5 @@
     "rust-analyzer.lens.methodReferences": true,
     "coc.preferences.formatOnType": true,
     "outline.keepWindow": false,
-    "outline.splitCommand": "botleft 50vs"
+    "outline.splitCommand": "botright 50vs"
 }
