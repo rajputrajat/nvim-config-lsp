@@ -3,5 +3,9 @@
     "rust-analyzer.lens.methodReferences": true,
     "coc.preferences.formatOnType": true,
     "outline.keepWindow": false,
-    "outline.splitCommand": "botright 50vs"
+    "outline.splitCommand": "botright 50vs",
+    "zig.enabled": true,
+    "zig.startUpMessage": true,
+    "zig.path": "zls",
+    "zig.debugLog": false
 }

@@ -26,6 +26,7 @@ require('packer').startup(function(use)
     use { 'tikhomirov/vim-glsl' }
     use { 'embear/vim-localvimrc' }
     use { 'rhysd/vim-clang-format' }
+    use { 'ziglang/zig.vim' }
 
     if packer_bootstrap then
         require('packer').sync()
