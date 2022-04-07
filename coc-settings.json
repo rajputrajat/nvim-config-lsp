@@ -4,8 +4,16 @@
     "coc.preferences.formatOnType": true,
     "outline.keepWindow": false,
     "outline.splitCommand": "botright 50vs",
-    "zig.enabled": true,
-    "zig.startUpMessage": true,
-    "zig.path": "zls",
-    "zig.debugLog": false
+    "languageserver": {
+        "zls" : {
+            "command": "zls.exe",
+            "filetypes": ["zig"]
+        },
+        "elmLS": {
+        "command": "elm-language-server",
+        "filetypes": ["elm"],
+        "rootPatterns": ["elm.json"]
+        }
+    },
+    "codeLens.enable": false
 }
