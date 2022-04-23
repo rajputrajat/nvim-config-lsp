@@ -10,9 +10,9 @@
             "filetypes": ["zig"]
         },
         "elmLS": {
-        "command": "elm-language-server",
-        "filetypes": ["elm"],
-        "rootPatterns": ["elm.json"]
+            "command": "elm-language-server",
+            "filetypes": ["elm"],
+            "rootPatterns": ["elm.json"]
         }
     },
     "codeLens.enable": false
