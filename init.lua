@@ -27,6 +27,7 @@ require('packer').startup(function(use)
     use { 'embear/vim-localvimrc' }
     use { 'rhysd/vim-clang-format' }
     use { 'ziglang/zig.vim' }
+    use { 'elmcast/elm-vim' }
 
     if packer_bootstrap then
         require('packer').sync()
@@ -37,6 +38,8 @@ end)
 g.rustfmt_autosave = 1
 g.rustfmt_emit_files = 1
 g.rustfmt_fail_silently = 0
+
+g.elm_format_autosave = 1
 
 require'nvim-treesitter.configs'.setup {
     ensure_installed = {
