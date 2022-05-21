@@ -1,19 +1,21 @@
 {
-    "rust-analyzer.cargo.allFeatures": true,
-    "rust-analyzer.lens.methodReferences": true,
-    "coc.preferences.formatOnType": true,
-    "outline.keepWindow": false,
-    "outline.splitCommand": "botright 50vs",
-    "languageserver": {
-        "zls" : {
-            "command": "zls.exe",
-            "filetypes": ["zig"]
-        },
-        "elmLS": {
-            "command": "elm-language-server",
-            "filetypes": ["elm"],
-            "rootPatterns": ["elm.json"]
-        }
+  "rust-analyzer.cargo.allFeatures": true,
+  "rust-analyzer.lens.methodReferences": true,
+  "coc.preferences.formatOnType": true,
+  "coc.preferences.formatOnSaveFiletypes": ["cpp", "c", "html", "xml", "json"],
+  "outline.keepWindow": false,
+  "outline.splitCommand": "botright 50vs",
+  "languageserver": {
+    "zls": {
+      "command": "zls.exe",
+      "filetypes": ["zig"]
     },
-    "codeLens.enable": false
+    "elmLS": {
+      "command": "elm-language-server",
+      "filetypes": ["elm"],
+      "rootPatterns": ["elm.json"]
+    }
+  },
+  "codeLens.enable": false,
+  "python.analysis.typeCheckingMode": "strict"
 }
