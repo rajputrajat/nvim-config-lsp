@@ -133,6 +133,8 @@ utils.opt('o', 'cscopequickfix', 's-,c-,d-,i-,t-,e-')
 
 if fn.has('win32') == 1 then
     g.python3_host_prog = '$HOME/AppData/Local/Programs/Python/Python39/python3.exe'
+elseif fn.has('mac') == 1 then
+    g.python3_host_prog = '/Library/Frameworks/Python.framework/Versions/3.10/bin/python3'
 else
     g.python3_host_prog = '/usr/bin/python3'
 end
