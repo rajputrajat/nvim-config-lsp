@@ -28,6 +28,15 @@ require('packer').startup(function(use)
     use { 'rhysd/vim-clang-format' }
     use { 'ziglang/zig.vim' }
     use { 'elmcast/elm-vim' }
+    use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+    use {
+        'saecki/crates.nvim',
+        event = { "BufRead Cargo.toml" },
+        requires = { { 'nvim-lua/plenary.nvim' } },
+        config = function()
+            require('crates').setup()
+        end,
+    }
 
     if packer_bootstrap then
         require('packer').sync()
@@ -45,7 +54,7 @@ require'nvim-treesitter.configs'.setup {
     ensure_installed = {
         "bash", "c", "c_sharp", "cmake", "comment", "cpp", "go", "html", "java", "javascript",
         "json", "kotlin", "lua", "python", "php", "ruby", "rust", "toml", "typescript",
-        "vim", "yaml", "zig"
+        "vim", "yaml", "zig", "glsl", "wgsl"
     },
     rainbow = {
         enable = true,
@@ -144,8 +153,20 @@ cmd [[
 
     " Make <CR> auto-select the first completion item and notify coc.nvim to
     " format on enter, <cr> could be remapped by other vim plugin
-    inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                                \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+    " inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+    "                             \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+    function! s:check_back_space() abort
+        let col = col('.') - 1
+        return !col || getline('.')[col - 1]  =~ '\s'
+    endfunction
+
+    " Insert <tab> when previous text is space, refresh completion if not.
+    inoremap <silent><expr> <TAB>
+        \ coc#pum#visible() ? coc#pum#next(1):
+        \ <SID>check_back_space() ? "\<Tab>" :
+        \ coc#refresh()
+    inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
     " Use `[g` and `]g` to navigate diagnostics
     " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
@@ -256,19 +277,6 @@ cmd [[
     " Resume latest coc list.
     nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
-    inoremap <silent><expr> <TAB>
-        \ pumvisible() ? coc#_select_confirm() :
-        \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-        \ Check_back_space() ? "\<TAB>" :
-        \ coc#refresh()
-
-    function! Check_back_space() abort
-        let col = col('.') - 1
-        return !col || getline('.')[col - 1]  =~# '\s'
-    endfunction
-
-    let g:coc_snippet_next = '<tab>'
-
     colorscheme sonokai
     let g:sonokai_style = 'espresso'
     let g:sonokai_enable_italic = 1
@@ -298,6 +306,7 @@ cmd [[
     set completeopt=menuone,noinsert,noselect
 
     nnoremap <leader>o        <cmd>CocOutline<cr>
+    nnoremap <leader>gb       <cmd>CocCommand git.showBlameDoc<cr>
     nnoremap <c-j>            <cmd>cn<cr>
     nnoremap <c-k>            <cmd>cp<cr>
     nnoremap <leader>e        <cmd>e %:h<cr>

@@ -1,6 +1,4 @@
 {
-  "rust-analyzer.cargo.allFeatures": true,
-  "rust-analyzer.lens.methodReferences": true,
   "coc.preferences.formatOnType": true,
   "coc.preferences.formatOnSaveFiletypes": ["cpp", "c", "html", "xml", "json"],
   "outline.keepWindow": false,
@@ -17,5 +15,6 @@
     }
   },
   "codeLens.enable": false,
-  "python.analysis.typeCheckingMode": "strict"
+  "python.analysis.typeCheckingMode": "strict",
+  "clangd.fallbackFlags": ["-xc++ -othercompilerflagsofyourchoice"]
 }
