@@ -2,7 +2,7 @@
   "coc.preferences.formatOnType": true,
   "coc.preferences.formatOnSaveFiletypes": ["cpp", "c", "html", "xml", "json"],
   "outline.keepWindow": false,
-  "outline.splitCommand": "botright 50vs",
+  "outline.splitCommand": "botright 80vs",
   "languageserver": {
     "zls": {
       "command": "zls.exe",

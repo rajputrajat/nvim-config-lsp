@@ -37,6 +37,7 @@ require('packer').startup(function(use)
             require('crates').setup()
         end,
     }
+    -- use { 'jaxbot/semantic-highlight.vim' }
 
     if packer_bootstrap then
         require('packer').sync()
