@@ -12,6 +12,7 @@ end
 
 require('packer').startup(function(use)
 
+    use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { {'nvim-lua/plenary.nvim'} } }
     use { 'wbthomason/packer.nvim' }
     use { 'thaerkh/vim-indentguides'}
     use { 'rust-lang/rust.vim' }
@@ -37,7 +38,6 @@ require('packer').startup(function(use)
             require('crates').setup()
         end,
     }
-    -- use { 'jaxbot/semantic-highlight.vim' }
 
     if packer_bootstrap then
         require('packer').sync()
@@ -343,3 +343,9 @@ cmd [[
     " toggle coc diagnostics
     command DiagToggle :call CocAction('diagnosticToggle')
 ]]
+
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
