@@ -54,7 +54,7 @@ g.elm_format_autosave = 1
 require'nvim-treesitter.configs'.setup {
     ensure_installed = {
         "bash", "c", "c_sharp", "cmake", "comment", "cpp", "go", "html", "java", "javascript",
-        "json", "kotlin", "lua", "python", "php", "ruby", "rust", "toml", "typescript",
+        "json", "kotlin", "lua", "python", "rust", "toml", "typescript",
         "vim", "yaml", "zig", "glsl", "wgsl"
     },
     rainbow = {
