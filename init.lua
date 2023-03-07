@@ -30,6 +30,7 @@ require('packer').startup(function(use)
     use { 'ziglang/zig.vim' }
     use { 'elmcast/elm-vim' }
     use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+    use { 'DingDean/wgsl.vim' }
     use {
         'saecki/crates.nvim',
         event = { "BufRead Cargo.toml" },
