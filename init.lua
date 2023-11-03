@@ -4,16 +4,16 @@ local fn = vim.fn
 
 g.mapleader = ' '
 
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 local packer_bootstrap = nil
 if fn.empty(fn.glob(install_path)) > 0 then
-    packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    packer_bootstrap = fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim',
+        install_path })
 end
 
 require('packer').startup(function(use)
-
     use { 'wbthomason/packer.nvim' }
-    use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { {'nvim-lua/plenary.nvim'} } }
+    use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { { 'nvim-lua/plenary.nvim' } } }
     use {
         'williamboman/mason.nvim',
         'williamboman/mason-lspconfig.nvim',
@@ -21,11 +21,11 @@ require('packer').startup(function(use)
     }
     use {
         'hrsh7th/nvim-cmp',
-        'hrsh7th/cmp-nvim-lsp', -- LSP source for nvim-cmp
+        'hrsh7th/cmp-nvim-lsp',     -- LSP source for nvim-cmp
         'saadparwaiz1/cmp_luasnip', -- Snippets source for nvim-cmp
-        'L3MON4D3/LuaSnip' -- Snippets plugin
+        'L3MON4D3/LuaSnip'          -- Snippets plugin
     }
-    use { 'thaerkh/vim-indentguides'}
+    use { 'thaerkh/vim-indentguides' }
     use { 'rust-lang/rust.vim' }
     use { 'simrat39/rust-tools.nvim' }
     use { 'tomtom/tcomment_vim' }
@@ -45,7 +45,7 @@ require('packer').startup(function(use)
     use {
         'saecki/crates.nvim',
         event = { "BufRead Cargo.toml" },
-        requires = { { 'nvim-lua/plenary.nvim' } },
+        requires = { 'nvim-lua/plenary.nvim' },
         config = function()
             require('crates').setup()
         end,
@@ -63,16 +63,14 @@ require('packer').startup(function(use)
     if packer_bootstrap then
         require('packer').sync()
     end
-
 end)
 
 g.rustfmt_autosave = 1
 g.rustfmt_emit_files = 1
 g.rustfmt_fail_silently = 0
-
 g.elm_format_autosave = 1
 
-require'nvim-treesitter.configs'.setup {
+require 'nvim-treesitter.configs'.setup {
     ensure_installed = {
         "bash", "c", "c_sharp", "cmake", "comment", "cpp", "go", "html", "java", "javascript",
         "json", "kotlin", "lua", "python", "rust", "toml", "typescript",
@@ -95,10 +93,10 @@ require'nvim-treesitter.configs'.setup {
 }
 
 require('lualine').setup()
-
 require("mason").setup()
 require("mason-lspconfig").setup {
-    ensure_installed = { "lua_ls", "rust_analyzer", "bashls", "asm_lsp", "omnisharp", "cmake", "diagnosticls", "dockerls", "gopls", "html", "biome", "tsserver", "lemminx", "taplo" },
+    ensure_installed = { "lua_ls", "rust_analyzer", "bashls", "asm_lsp", "omnisharp", "cmake", "diagnosticls",
+        "dockerls", "gopls", "html", "biome", "tsserver", "lemminx", "taplo" },
 }
 
 local lspconfig = require('lspconfig')
@@ -114,8 +112,8 @@ local handlers = {
 }
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
--- local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'lua_ls' }
-local servers = { "lua_ls", "rust_analyzer", "bashls", "asm_lsp", "omnisharp", "cmake", "diagnosticls", "dockerls", "gopls", "html", "biome", "tsserver", "lemminx", "taplo" }
+local servers = { "lua_ls", "rust_analyzer", "bashls", "asm_lsp", "omnisharp", "cmake", "diagnosticls", "dockerls",
+    "gopls", "html", "biome", "tsserver", "lemminx", "taplo" }
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
         -- on_attach = my_custom_on_attach,
@@ -135,7 +133,6 @@ lspconfig.lua_ls.setup {
 }
 
 vim.diagnostic.config {
-    -- virtual_text = false,
     virtual_text = {
         source = 'always',
     },
@@ -169,7 +166,7 @@ cmp.setup {
     },
     mapping = cmp.mapping.preset.insert({
         ['<C-u>'] = cmp.mapping.scroll_docs(-4), -- Up
-        ['<C-d>'] = cmp.mapping.scroll_docs(4), -- Down
+        ['<C-d>'] = cmp.mapping.scroll_docs(4),  -- Down
         -- C-b (back) C-f (forward) for snippet placeholder navigation.
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<CR>'] = cmp.mapping.confirm {
@@ -230,9 +227,9 @@ require("fidget").setup {
 
 require('lspconfig.ui.windows').default_options.border = border
 
-local utils = { }
+local utils = {}
 
-local scopes = {o = vim.o, b = vim.bo, w = vim.wo}
+local scopes = { o = vim.o, b = vim.bo, w = vim.wo }
 
 function utils.opt(scope, key, value)
     scopes[scope][key] = value
@@ -240,7 +237,7 @@ function utils.opt(scope, key, value)
 end
 
 function utils.map(mode, lhs, rhs, opts)
-    local options = {noremap = true, silent = true}
+    local options = { noremap = true, silent = true }
     if opts then options = vim.tbl_extend('force', options, opts) end
     vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
@@ -268,11 +265,11 @@ utils.opt('o', 'hidden', true)
 utils.opt('o', 'splitbelow', true)
 utils.opt('o', 'splitright', true)
 utils.opt('o', 'ignorecase', true)
-utils.opt('o', 'scrolloff', 4 )
+utils.opt('o', 'scrolloff', 4)
 utils.opt('o', 'shiftround', true)
 utils.opt('o', 'smartcase', true)
 utils.opt('o', 'wildmode', 'list:longest')
-utils.opt('o', 'clipboard','unnamed,unnamedplus')
+utils.opt('o', 'clipboard', 'unnamed,unnamedplus')
 utils.opt('o', 'termguicolors', true)
 utils.opt('o', 'laststatus', 3)
 utils.opt('o', 'linespace', 5)
